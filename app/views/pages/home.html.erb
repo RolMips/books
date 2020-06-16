@@ -1,0 +1,21 @@
+<!-- # app/views/pages/home.html.erb -->
+<h1>Home Page</h1>
+<p>Ceci est mon premier site réalisé avec Ruby on Rails.</p>
+<p>Ceci est ma première variable : Compteur => <%= @compteur %>.</p>
+<% if @compteur > 5 %>
+  <p>Le compteur est supérieur à 5 !</p>
+<% else %>
+  <p>Le compteur est inférieur ou égal à 5 !</p>
+<% end %>
+<p>Ceci une boucle sur la valeur du compteur</p>
+<% @compteur.times do |i| %>
+  <% if i==0 %>
+    <p><a href="/p1">Lien vers la page <%= i+1 %></a></p>
+  <% elsif i==1 %>
+    <p><a href="/books">Lien vers la page <%= i+1 %> (Liste des livres)</a></p>
+  <% elsif i==2 %>
+      <p><a href="/users">Lien vers la page <%= i+1 %> (Liste des Utilisateurs)</a></p>
+  <% else %>
+    <p><%= i+1 %> (pas encore de page)</p>
+  <% end %>
+<% end %>

@@ -1,0 +1,26 @@
+<!-- app/views/layout/application.html.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Castor</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <%= image_tag "logo_nerya.svg", alt: "Logo Nerya", width: 180, height: 40 %>
+    <% if @current_user %>
+    <p><%= form_tag "/users/login", method: :delete do %>
+        Bienvienue   <%= @current_user.name %> !&emsp;
+        <input type="submit" value="Déconnexion" />
+      <% end %></p>
+  <% else %>
+    <p>Bienvenue visiteur anonyme !</p>
+  <% end %>
+  <body>
+    <%= yield %>
+  </body>
+  <p><a href="/">Home page</a></p>
+  <p><font color="blue"><%= flash[:success] %></font></p>
+  <p><font color="blue"><%= flash[:info] %></font></p>
+</html>

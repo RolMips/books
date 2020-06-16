@@ -1,0 +1,9 @@
+<!-- # app/views/books/show.html.erb -->
+<h1>Utilisateur sélectionné : <%= @user.name_was %> [<%= @user.id %>]</h1>
+<%= render "users/userform" %>
+<br>
+<%= form_tag "/users/#{@user.id}", method: "delete" do %>
+  <input type="submit" value="Supprimer l'utilisateur" />
+<% end %>
+<br>
+<a href="/users">Retourner à la liste</a>

@@ -1,0 +1,7 @@
+<!-- # app/views/books/index.html.erb -->
+<h1>Liste des livres</h1>
+<%= paginate @books %>
+<% @books.each do |book| %>
+  <p><%= book_link book %></p>
+<% end %>
+<%= render "books/bookform" %>

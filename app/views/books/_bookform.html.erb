@@ -1,0 +1,32 @@
+<!-- # app/views/books/_bookform.html.erb -->
+<% if @book.persisted? %>
+  <%= form_for @book do %>
+    <label for="user_name">Titre du livre :</label>
+    <input type="text" name="book_title" value="<%= @book.title %>" required>
+    <label for="book_category">Catégorie :</label>
+    <select name="book_category">
+      <% @categories.each do |category| %>
+        <% if @book.category_id_was == category.id %>
+          <option value=<%= category.id %> selected><%= category.name %></option>
+        <%else %>
+          <option value=<%= category.id %>><%= category.name %></option>
+          <% end %>
+      <% end %>
+    </select>
+    <input class="button" name="book_update" type="submit" value="Modifier le livre" />
+    <input class="button" name="book_delete" type="submit" value="Supprimer le livre" />
+  <% end %>
+<% else %>
+  <%= form_for @book do %>
+    <label for="user_name">Titre du livre :</label>
+    <input type="text" name="book_title" placeholder="Titre du livre" required>
+    <label for="book_category">Catégorie du livre :</label>
+    <select name="book_category">
+      <% @categories.each do |category| %>
+        <option value=<%= category.id %>><%= category.name %></option>
+      <% end %>
+    </select>
+    <input class="button" name="book_add" type="submit" value="Ajouter un nouveau livre" /><br>
+  <% end %>
+<% end %>
+<p><font color="red"><%= @book.errors[:title].first %></font></p>

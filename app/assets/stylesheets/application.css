@@ -1,0 +1,27 @@
+ form {
+   margin-top: 1em;
+   margin-bottom: 0em;
+   margin: 0 left;
+   width: 500px;
+   /* Encadré pour voir les limites du formulaire */
+   padding: 1em;
+   border: 1px solid #CCC;
+   border-radius: 1em;
+ }
+
+ label {
+   /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
+   margin-top: 1em;
+   display: inline-block;
+   width: 240px;
+   text-align: left;
+ }
+
+ .button {
+  /* Pour placer le bouton à la même position que les champs texte */
+  margin-top: 2em;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  width: 200px;
+  height: 30px;
+}

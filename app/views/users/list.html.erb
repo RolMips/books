@@ -1,0 +1,7 @@
+<!-- # app/views/users/users.html.erb -->
+<h1>Liste des utilisateurs</h1>
+<%= paginate @users %>
+<% @users.each do |user| %>
+  <p><%= user_link user %></p>
+<% end %>
+<%= render "users/userform" %>

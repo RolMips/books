@@ -1,0 +1,10 @@
+<!-- # app/views/users/login.html.erb -->
+<h1>Connexion</h1>
+<%= form_tag "/users/login", method: :post do %>
+  <label for="user_name">Nom utilisateur :</label>
+  <input type="text" id="user_name" name="user_name" />
+  <label for="user_password">Mot de passe :</label>
+  <input type="password" id="user_password" name="user_password" />
+  <input class="button" type="submit" value="Se connecter" />
+<% end %>
+<br>&nbsp;
